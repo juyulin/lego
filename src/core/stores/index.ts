@@ -13,32 +13,49 @@ import {
   getRoot,
   SnapshotIn
 } from "mobx-state-tree";
+import * as _ from 'lodash';
+
 import { ServiceStore } from './service';
 import { StoreNode } from "./storeNode";
 export default {}
 
 
-const RendersStore = types.model('RendersStore')
+
+const RendersStore = types.model('RendersStore', {
+  storeType: 'RendersStore'
+})
   .props({
-    type: 'RenderStore',
 
   })
   .views(self => {
 
-    return {}
+    return {
+      addStore(store: {
+        storeType: string;
+        id: string;
+        path: string;
+        parentId?: string;
+        [propName: string]: any;
+      }) {
+        const { storeType } = store;
+        const factory = _.find(StoreFactory, ['storeType', storeType]);
+        
+        storesManager.addStore((factory as any).create(store as any, getEnv(self)))
+      }
+    }
   })
 
 
-export const StoreFactory = [RendersStore, ServiceStore];
+  export const StoreFactory = [RendersStore, ServiceStore];
 
 
-export const selectStore = (name) => _.find(StoreFactory, (store) => store.storeType === name)
 const stores: {
   [key: string]: StoreNode
 } = {}
 
 export const storesManager = {
-  addStore: (id: string, store: StoreNode) => {
+  addStore: (store: StoreNode) => {
+    const id = store.id
     if (stores[id]) {
       return stores[id];
     }

@@ -14,6 +14,7 @@ import {
 } from "mobx-state-tree";
 
 export const StoreNode = types.model('StoreNode', {
+    sotreType: 'StoreNode',
     childrenIds: types.array(types.string),
     id: types.identifier,
     parentId: '',
@@ -21,7 +22,7 @@ export const StoreNode = types.model('StoreNode', {
 }).views(self => ({
     get parent() {
 
-        return 123
+        return self.parentId
     },
     addChildId(id: string) {
         self.childrenIds.push(id)

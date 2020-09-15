@@ -47,6 +47,7 @@
     "jest-watch-typeahead": "0.4.2",
     "lodash": "^4.17.20",
     "mini-css-extract-plugin": "0.9.0",
+    "mobx-react": "^6.3.0",
     "mobx-state-tree": "^3.17.2",
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "pnp-webpack-plugin": "1.6.4",

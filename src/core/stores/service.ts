@@ -14,8 +14,8 @@ import {
   flow
 } from "mobx-state-tree";
 import { servicesManager, ServiceConfig } from '../services'
-
-export const ServiceStore = types.model('ServiceModel')
+import {StoreNode} from './storeNode'
+export const ServiceStore = StoreNode.named('ServiceModel')
   .props({
     msg: '',
     error: false,

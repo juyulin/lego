@@ -7058,6 +7058,18 @@ mkdirp@^0.5.5:
   dependencies:
     minimist "^1.2.5"
 
+mobx-react-lite@>=2.2.0:
+  version "2.2.1"
+  resolved "http://npm.crgt.xyz/mobx-react-lite/-/mobx-react-lite-2.2.1.tgz#9c05dd799005d29ec1671ae86ca30b3ab5411055"
+  integrity sha1-nAXdeZAF0p7BZxrobKMLOrVBEFU=
+
+mobx-react@^6.3.0:
+  version "6.3.0"
+  resolved "http://npm.crgt.xyz/mobx-react/-/mobx-react-6.3.0.tgz#7d11799f988bbdadc49e725081993b18baa20329"
+  integrity sha1-fRF5n5iLva3EnnJQgZk7GLqiAyk=
+  dependencies:
+    mobx-react-lite ">=2.2.0"
+
 mobx-state-tree@^3.17.2:
   version "3.17.2"
   resolved "http://npm.crgt.xyz/mobx-state-tree/-/mobx-state-tree-3.17.2.tgz#130ab4d450fc4dd6e2571b7385af1350c82def37"
