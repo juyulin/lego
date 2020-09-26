@@ -1,20 +1,32 @@
 import React, { useEffect } from 'react';
+import { Layout } from 'antd';
+
+const { Header, Sider } = Layout;
 
 
 interface PageRenderProps {
   title: string
 }
 
+
+
+
 export const PageRender: React.FC<PageRenderProps> = (props) => {
   
   useEffect(() => {
-    if(props.title) {
+    if(typeof props.title !== 'undefined') {
       document.title = props.title;
     }
   }, [props.title])
   return (
-    <div>
+   <Layout>
+     <Header>
+       
+     </Header>
+     <Sider>
 
-    </div>
+     </Sider>
+
+   </Layout>
   )
 }
