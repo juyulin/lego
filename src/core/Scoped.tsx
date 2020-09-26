@@ -62,18 +62,9 @@ export class RootRenderer extends React.Component<RootRendererProps> {
 
       return (
           <RootStoreContext.Provider value={rootStore}>
-                {renderChild({
-                    type: 'page',
-                    schema
-                })}
+            
           </RootStoreContext.Provider>
       );
   }
 }
 
-function renderChild({
-  type,
-  ...schema
-}) {
-
-}

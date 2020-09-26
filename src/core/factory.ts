@@ -6,3 +6,4 @@
  * @FilePath: /lego/src/core/factory.ts
  * @Description:
  */
+export default {}

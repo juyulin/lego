@@ -1,7 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Render } from './core';
+import { FormItemRender} from './core/renders/FormItem'
+import { FormRender} from './core/renders/Form'
+
+import { Input } from 'antd';
 const data = {
   name: 'Layout',
   children: [{
@@ -20,7 +23,11 @@ const data = {
 } 
 function App() {
   return (
-     <Render data={data} />
+     <FormRender>
+       <FormItemRender>
+         <Input />
+       </FormItemRender>
+     </FormRender>
   );
 }
 
